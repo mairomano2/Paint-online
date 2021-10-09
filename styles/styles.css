@@ -7,8 +7,71 @@ body {
   font-size: 62.5%;
 }
 
-.botonColor {
+canvas {
+  border: #ccc solid 1px;
+}
+
+.boton {
   height: 30px;
   width: 30px;
+  margin: 3px;
+  border: #808080 solid 1px;
+  border-radius: 3px;
+}
+
+#negro {
+  background-color: #000;
+}
+
+#blanco {
+  background-color: #fff;
+}
+
+#grisClaro {
+  background-color: #ccc;
+}
+
+#grisMedio {
+  background-color: #808080;
+}
+
+#grisOscuro {
+  background-color: #2f2f2f;
+}
+
+#rojo {
+  background-color: #ed0b0b;
+}
+
+#rosa {
+  background-color: #fc57a5;
+}
+
+#naranja {
+  background-color: #f46702;
+}
+
+#amarillo {
+  background-color: #f4e902;
+}
+
+#verdeClaro {
+  background-color: #bdf738;
+}
+
+#verdeOscuro {
+  background-color: #096f03;
+}
+
+#celeste {
+  background-color: #2fe3d2;
+}
+
+#azul {
+  background-color: #2735b6;
+}
+
+#violeta {
+  background-color: #a127b6;
 }
 /*# sourceMappingURL=styles.css.map */

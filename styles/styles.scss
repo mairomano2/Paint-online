@@ -1,7 +1,71 @@
 @import "resets";
 @import "colores";
 
-.botonColor{
+canvas{
+  border: $grisClaro solid 1px;
+}
+
+.boton{
   height: 30px;
   width: 30px;
+  margin: 3px;
+  border: $grisMedio solid 1px;
+  border-radius: 3px;
+}
+
+#negro{
+  background-color: $negro;
+}
+
+
+#blanco{
+  background-color: $blanco;
+}
+
+#grisClaro{
+  background-color: $grisClaro;
+}
+
+#grisMedio{
+  background-color: $grisMedio;
+}
+
+#grisOscuro{
+  background-color: $grisOscuro;
+}
+
+#rojo{
+  background-color: $rojo;
+}
+
+#rosa{
+  background-color: $rosa;
+}
+
+#naranja{
+  background-color: $naranja;
+}
+
+#amarillo{
+  background-color: $amarillo;
+}
+
+#verdeClaro{
+  background-color: $verdeClaro;
+}
+
+#verdeOscuro{
+  background-color: $verdeOscuro;
+}
+
+#celeste{
+  background-color:$celeste;
+}
+
+#azul{
+  background-color: $azul;
+}
+
+#violeta{
+  background-color: $violeta;
 }

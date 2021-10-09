@@ -14,4 +14,4 @@ let colores = {
   celeste: "#2fe3d2",
   azul: "#2735b6",
   violeta: "#a127b6"
-}
+};
