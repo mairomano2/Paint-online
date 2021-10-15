@@ -37,9 +37,11 @@
       <button class="boton" id="azul"></button>
       <button class="boton" id="violeta"></button>      
     </div>
+    
     <div class="sliderPincel">
+      <input type="range" id="sliderPincel" value="10" min="10" max="400" oninput="this.nextElementSibling.value = this.value">
+      <output>10</output>
       <p>Tamaño:</p>
-      <p id="tamanoPincel">10</p>
     </div>
 
     <script src="javascript/colores.js"></script>
