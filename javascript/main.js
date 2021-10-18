@@ -3,11 +3,7 @@
 let colorFondo = 255;
 
 //color del pincel
-colorPincel = {
-  r: 0,
-  g: 0,
-  b: 0
-};
+colorPincel = colores.negro
 
 //cambio de true a false para usar los divs de colores para el fondo y el pincel
 let onDibujar = true;
@@ -33,8 +29,7 @@ function setup() {
 function draw() {
   //tamaño del pincel
   let tamanoPincel = document.querySelector("#sliderPincel").value;
-    //funciones del draw
-    // cambiarColorCanvas();
+
   borrarDibujo();
   limpiarCanvas();
 
@@ -44,34 +39,4 @@ function draw() {
     noStroke();
     ellipse(mouseX, mouseY, tamanoPincel, tamanoPincel);
   };
-};
-
-//FUNCIONES GENERALES
-//cambiar de on a off dibujar y fondo
-function cambiarStatus(){
-  onDibujar = !onDibujar;
-  onFondo = !onFondo;
-};
-
-//cambiar el color del pincel a un color random
-let colorRandom = document.querySelector("#colorRandom");
-colorRandom.addEventListener("click", function(){
-  colorPincel.r = random(255);
-  colorPincel.g = random(255);
-  colorPincel.b = random (255);
-});
-
-//borrar parte del dibujo 
-function borrarDibujo(){
-  document.querySelector("#borrar").addEventListener("click", function(){
-    erase(colorFondo);
-  });
-};
-  
-//limpiar el canvas
-function limpiarCanvas(){
-  document.querySelector("#limpiarCanvas").addEventListener("click", function(){
-    clear();
-    colorFondo = 255;
-  });
 };
