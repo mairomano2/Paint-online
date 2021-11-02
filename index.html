@@ -1,51 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./imagenes/paint.png">
+  <!-- FUENTE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Rampart+One&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
 
   <!-- CDN P5 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
-  <!-- SCSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/styles.css">
   <title>Paint</title>
   </head>
   <body>
-    <h1>Welcome to online Paint</h1>
-    <div>
-      <button class="boton" id="fondo"><img src="imagenes/dibujar.png" class="imgBoton"></button>
-      <button class="boton" id="dibujar"><img src="imagenes/fondo.png" class="imgBoton"></button>
-      <button class="boton" id="borrar"><img src="imagenes/borrar.png" class="imgBoton"></button>
-      <button class="boton" id="limpiarCanvas"><img src="imagenes/limpiarCanvas.png" class="imgBoton"></button>
-      <button class="boton" id="colorRandom"><img src="imagenes/dado.png" class="imgBoton"></button>
-    </div>
-    <div class="colores">
-      <button class="boton" id="blanco"></button>
-      <button class="boton" id="grisClaro"></button>
-      <button class="boton" id="grisMedio"></button>
-      <button class="boton" id="grisOscuro"></button>
-      <button class="boton" id="negro"></button>
-      <button class="boton" id="rojo"></button>
-      <button class="boton" id="rosa"></button>
-      <button class="boton" id="naranja"></button>
-      <button class="boton" id="amarillo"></button>
-      <button class="boton" id="verdeClaro"></button>
-      <button class="boton" id="verdeOscuro"></button>
-      <button class="boton" id="celeste"></button>
-      <button class="boton" id="azul"></button>
-      <button class="boton" id="violeta"></button>      
-    </div>
-    
-    <div class="sliderPincel">
-      <input type="range" id="sliderPincel" value="10" min="10" max="400" oninput="this.nextElementSibling.value = this.value">
-      <output>10</output>
-      <p>Tamaño:</p>
-    </div>
+    <main>
+      <div class="header">
+        <img src="./imagenes/paint.png">
+        <h1>Welcome to online Paint</h1>
+        <img src="./imagenes/paint.png">
+      </div>
+      <div class="colores">
+        <button class="boton" id="blanco"></button>
+        <button class="boton" id="grisClaro"></button>
+        <button class="boton" id="grisMedio"></button>
+        <button class="boton" id="grisOscuro"></button>
+        <button class="boton" id="negro"></button>
+        <button class="boton" id="rojo"></button>
+        <button class="boton" id="naranja"></button>
+        <button class="boton" id="amarillo"></button>
+        <button class="boton" id="verdeClaro"></button>
+        <button class="boton" id="verdeOscuro"></button>
+        <button class="boton" id="celeste"></button>
+        <button class="boton" id="azul"></button>
+        <button class="boton" id="violeta"></button>      
+        <button class="boton" id="rosa"></button>
+        <button class="boton" id="marron"></button>
+      </div>
 
+      <div class="herramientas">
+        <button class="boton" id="fondo">
+          <img src="imagenes/dibujar.png" class="imgBoton">
+        </button>
+        <button class="boton" id="dibujar">
+          <img src="imagenes/fondo.png" class="imgBoton">
+        </button>
+        <button class="boton" id="borrar">
+          <img src="imagenes/borrar.png" class="imgBoton">
+        </button>
+        <button class="boton" id="limpiarCanvas">
+          <img src="imagenes/limpiarCanvas.png" class="imgBoton">
+        </button>
+        <button class="boton" id="colorRandom">
+          <img src="imagenes/dado.png" class="imgBoton">
+        </button>
+        <button class="boton" id="descargar">
+          <img src="imagenes/descargar.png" alt="imgBoton">
+        </button>
+        <button class="boton" id="circuloRandom">
+          <img src="./imagenes/circuloRandom.png" alt="imgBoton">
+        </button>
+        <button class="boton" id="rectanguloRandom">
+          <img src="./imagenes/rectanguloRandom.png" alt="imgBoton">
+        </button>
+        <div class="sliderPincel">
+          <input type="range" id="sliderPincel" value="10" min="10" max="400" oninput="this.nextElementSibling.value = this.value">
+          <output class="textoTamano texto">10</output>
+          <p class="texto">Tamaño del pincel:</p>
+        </div>
+      </div>
+    </main>
     <script src="javascript/colores.js"></script>
-    <script src="javascript/coloresFondo.js"></script>
     <script src="javascript/funciones.js"></script>
     <script src="javascript/main.js"></script>
   </body>

@@ -1,21 +1,23 @@
-let colorFondo = 255;
-let colorPincel = 0;
+function setup(){
+  createCanvas(400, 400)
+  background(0)
 
-function setup() {
-  createCanvas(400, 400);
+  document.querySelector("#boton").addEventListener("click", () => {
+  var valores = '0123456789ABCDEF';
+  var colorGenerado = '#';
+
+  for (var i = 0; i < 6; i++) {
+    colorGenerado += valores[Math.floor(Math.random() * 16)];
+  }
+
+    fill(colorGenerado)
+    ellipse(random(400), random(400), random(200), random(200))
+  })
 }
 
 function draw(){
-  background(colorFondo);
-  fill(colorPincel);
-  noStroke();
-  ellipse(mouseX, mouseY, 10, 10);
-  seleccionar("#red", 125)
-};
+}
 
-function seleccionar(id, color){
-  document.querySelector(id).addEventListener("click", function(){
-    colorPincel = color
-    console.log(colorPincel)
-  })
+function dibujar(){
+
 }

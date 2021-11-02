@@ -1,71 +1,78 @@
-@import "resets";
 @import "colores";
+@import "resets";
+@import "estiloBotones";
+
+@mixin container{
+  background-color: $azulOscuro;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+main{
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-areas:"header header header" 
+                      ". herramientas ."
+                      "colores canvas .";
+}
+
+.header{
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  h1{
+    font-size: 3.5em;
+    padding: 0.5em;
+  }
+
+  img{
+    width: 3em;
+    height: 3em;
+  }
+}
 
 canvas{
-  border: $grisClaro solid 1px;
+  justify-self: center;
+  display: flex;
+  justify-items: center;
+  background-color: white;
+  grid-area: canvas;
+  @include sombra;
 }
 
-.boton{
-  height: 30px;
-  width: 30px;
-  margin: 3px;
-  border: $grisMedio solid 1px;
-  border-radius: 3px;
+.colores{
+  grid-area: colores;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-sizing: content-box;
+  width: 30%;
+  height: 80%;
+  justify-self: flex-end;
+  justify-items: center;
+  @include container;
 }
 
-#negro{
-  background-color: $negro;
+.herramientas{
+  justify-self: center;
+  grid-area: herramientas;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include container;
+  box-sizing: content-box;
+  width: 70%;
+  height: 60%;
+  margin-bottom: 2em;
 }
 
-
-#blanco{
-  background-color: $blanco;
+.sliderPincel{
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-#grisClaro{
-  background-color: $grisClaro;
-}
-
-#grisMedio{
-  background-color: $grisMedio;
-}
-
-#grisOscuro{
-  background-color: $grisOscuro;
-}
-
-#rojo{
-  background-color: $rojo;
-}
-
-#rosa{
-  background-color: $rosa;
-}
-
-#naranja{
-  background-color: $naranja;
-}
-
-#amarillo{
-  background-color: $amarillo;
-}
-
-#verdeClaro{
-  background-color: $verdeClaro;
-}
-
-#verdeOscuro{
-  background-color: $verdeOscuro;
-}
-
-#celeste{
-  background-color:$celeste;
-}
-
-#azul{
-  background-color: $azul;
-}
-
-#violeta{
-  background-color: $violeta;
+.texto{
+  font-size: 1.5em;
 }

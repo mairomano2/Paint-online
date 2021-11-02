@@ -3,34 +3,16 @@
 function cambiarStatus(){
   onDibujar = !onDibujar;
   onFondo = !onFondo;
-  console.log(` ${onDibujar} ${onFondo}`)
 };
 
 //cambiar el color del pincel a un color random
 let colorRandom = document.querySelector("#colorRandom");
-colorRandom.addEventListener("click", function(){
-  colorPincel.r = random(255);
-  colorPincel.g = random(255);
-  colorPincel.b = random (255);
+colorRandom.addEventListener("click", () => {
+  generarColor()
+  colorPincel = colorGenerado;
 });
 
-//borrar parte del dibujo 
-function borrarDibujo(){
-  document.querySelector("#borrar").addEventListener("click", function(){
-    erase(colorFondo);
-  });
-};
-  
-//limpiar el canvas
-function limpiarCanvas(){
-  document.querySelector("#limpiarCanvas").addEventListener("click", function(){
-    clear();
-    colorFondo = 255;
-  });
-};
-
 //funciones para seleccionar el color del pincel o del fondo
-
 seleccionarColor("#blanco", colores.blanco);
 seleccionarColor("#grisClaro", colores.grisClaro);
 seleccionarColor("#grisMedio", colores.grisMedio);
@@ -45,13 +27,41 @@ seleccionarColor("#verdeOscuro", colores.verdeOscuro);
 seleccionarColor("#celeste", colores.celeste);
 seleccionarColor("#azul", colores.azul);
 seleccionarColor("#violeta", colores.violeta);
+seleccionarColor("#marron", colores.marron);
 
 function seleccionarColor(id, color){
-  document.querySelector(id).addEventListener("click", function(){
+  document.querySelector(id).addEventListener("click", () => {
     if (onDibujar == true){
       colorPincel = color
     }else if (onFondo == true){
-      onFondo = color
     };
   });
 };
+
+//borrar parte del dibujo 
+function borrarDibujo(){
+  document.querySelector("#borrar").addEventListener("click", () => {
+    colorPincel = colorFondo;
+  });
+};
+  
+//limpiar el canvas
+function limpiarCanvas(){
+  document.querySelector("#limpiarCanvas").addEventListener("click", () =>{
+    clear();
+    background(255)
+  });
+};
+
+//guardar el dibujo
+document.querySelector("#descargar").addEventListener("click", () => {
+  saveCanvas(canvas, 'myCanvas', 'png');
+})
+
+//cambiar tamano del canvas
+// function cambiarTamano(){
+//   let canvasWidth = document.querySelector("#canvasWidth").value;
+//   let canvasHeight = document.querySelector("#canvasHeight").value;
+
+//   resizeCanvas(canvasWidth, canvasHeight)
+// }
