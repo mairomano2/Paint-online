@@ -9,9 +9,6 @@ colorPincel = colores.negro;
 let onDibujar = true;
 let onFondo = false;
 const dibujar = document.querySelector("#dibujar");
-const fondo = document.querySelector("#fondo");
-dibujar.addEventListener("click", cambiarStatus);
-fondo.addEventListener("click", cambiarStatus);
 
 // SET UP P5.JS
 function setup() {
@@ -59,5 +56,3 @@ function draw() {
   limpiarCanvas();
   // cambiarTamano();
 };
-
-

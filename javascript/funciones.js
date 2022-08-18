@@ -1,17 +1,4 @@
 //FUNCIONES GENERALES
-//cambiar de on a off dibujar y fondo
-function cambiarStatus(){
-  onDibujar = !onDibujar;
-  onFondo = !onFondo;
-};
-
-//cambiar el color del pincel a un color random
-let colorRandom = document.querySelector("#colorRandom");
-colorRandom.addEventListener("click", () => {
-  generarColor()
-  colorPincel = colorGenerado;
-});
-
 //funciones para seleccionar el color del pincel o del fondo
 seleccionarColor("#blanco", colores.blanco);
 seleccionarColor("#grisClaro", colores.grisClaro);
@@ -38,6 +25,16 @@ function seleccionarColor(id, color){
   });
 };
 
+//cambiar el color del pincel a un color random
+let colorRandom = document.querySelector("#colorRandom");
+colorRandom.addEventListener("click", function(){
+    var valores = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "F"];
+    var colorGenerado = '#';
+    for (var i = 0; i < 6; i++) {
+      colorPincel =colorGenerado += random(valores);
+    } 
+});
+
 //borrar parte del dibujo 
 function borrarDibujo(){
   document.querySelector("#borrar").addEventListener("click", () => {
@@ -57,11 +54,3 @@ function limpiarCanvas(){
 document.querySelector("#descargar").addEventListener("click", () => {
   saveCanvas(canvas, 'myCanvas', 'png');
 })
-
-//cambiar tamano del canvas
-// function cambiarTamano(){
-//   let canvasWidth = document.querySelector("#canvasWidth").value;
-//   let canvasHeight = document.querySelector("#canvasHeight").value;
-
-//   resizeCanvas(canvasWidth, canvasHeight)
-// }
